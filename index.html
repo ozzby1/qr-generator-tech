@@ -259,25 +259,16 @@ header.app-header {
  position: relative;
  top: auto;
  z-index: 50;
- padding: 14px 16px;
- background: rgba(10, 12, 18, 0.85);
- backdrop-filter: blur(14px);
- -webkit-backdrop-filter: blur(14px);
- border: 1px solid rgba(255,255,255,0.06);
- box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+ padding: 0;
+ background: transparent;
+ border: 0;
+ box-shadow: none;
  margin-bottom: 1rem;
- border-radius: var(--radius-xl);
  display: flex;
  align-items: center;
- gap: 14px;
+ justify-content: flex-end;
  flex-wrap: wrap;
  overflow: visible;
-}
-
-.brand-logo {
- height: 64px;
- width: auto;
- filter: drop-shadow(0 8px 22px rgba(0,0,0,0.22));
 }
 
 .header-actions {
@@ -939,15 +930,13 @@ input[type="range"] {
  header.app-header {
  position: relative;
  top: auto;
- padding: 10px;
- border-radius: var(--radius-lg);
- margin-bottom: 14px;
+ padding: 0;
+  margin-bottom: 14px;
  }
- .brand-logo { height: 40px; }
  .header-actions {
  width: 100%;
- margin-left: 0;
- justify-content: flex-start;
+ margin-left: auto;
+ justify-content: flex-end;
  }
  .hero { padding-top: 14px; }
  h1 { font-size: clamp(1.72rem, 8vw, 2.35rem); line-height: 1.08; }
@@ -1109,9 +1098,9 @@ body[data-theme="light"]::before {
 }
 
 body[data-theme="light"] header.app-header {
- background: rgba(255,255,255,0.88);
- border-color: rgba(15,23,42,0.10);
- box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+ background: transparent;
+ border: 0;
+ box-shadow: none;
 }
 
 body[data-theme="light"] .hero {
@@ -1298,11 +1287,10 @@ body[data-theme="light"] .status-message[data-type="warning"] {
 
 
 
-/* Final requested visual fixes: non-sticky rounded header, rounded hero background and removed CTA area. */
+/* Final requested visual fixes: compact navigation, rounded hero background and removed CTA area. */
 header.app-header {
  position: relative !important;
  top: auto !important;
- border-radius: var(--radius-xl) !important;
  margin-bottom: 1rem !important;
  overflow: visible !important;
 }
@@ -1334,9 +1322,6 @@ body[data-theme="light"] .hero {
 }
 
 @media (max-width: 760px) {
- header.app-header {
-  border-radius: var(--radius-lg) !important;
- }
  .hero {
   padding: 18px 16px 18px !important;
   border-radius: var(--radius-lg) !important;
@@ -1345,7 +1330,7 @@ body[data-theme="light"] .hero {
 
 </style>
 
-<!-- Privacy-first analytics. It does not receive the QR form content. -->
+<!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <!-- Client-side QR matrix generator. No database, server-side QR storage or external QR API is used. -->
 <script>
@@ -2682,9 +2667,6 @@ module.exports = QRCode;
 </script>
 <div class="content">
  <header class="app-header">
- <a href="https://qr-generator.tech/" aria-label="QR Generator home">
- <img class="brand-logo" src="https://qr-generator.tech/qrlogo1.png" alt="QR Generator">
- </a>
  <div class="header-actions" aria-label="Main navigation">
  <a class="header-link active" href="https://qr-generator.tech/" aria-current="page">QR Generator</a>
  <a class="header-link" href="#generator">Create QR Code</a>
@@ -3164,12 +3146,9 @@ module.exports = QRCode;
 
 
  var THEME_STORAGE_KEY = 'qrGeneratorTechTheme';
- var brandLogo = document.querySelector('.brand-logo');
  var themeToggleBtn = el('themeToggleBtn');
  var themeToggleLabel = el('themeToggleLabel');
  var themeColorMeta = document.querySelector('meta[name="theme-color"]');
- var darkLogoSrc = 'https://qr-generator.tech/qrlogo.png';
- var lightLogoSrc = 'https://qr-generator.tech/qrlogo1.png';
 
  function getStoredTheme() {
  try {
@@ -3184,10 +3163,6 @@ module.exports = QRCode;
  var selectedTheme = theme === 'light' ? 'light' : 'dark';
  document.body.dataset.theme = selectedTheme;
  document.documentElement.dataset.theme = selectedTheme;
-
- if (brandLogo) {
-  brandLogo.src = selectedTheme === 'light' ? lightLogoSrc : darkLogoSrc;
- }
 
  if (themeColorMeta) {
   themeColorMeta.setAttribute('content', selectedTheme === 'light' ? '#f5f7fa' : '#09090d');
