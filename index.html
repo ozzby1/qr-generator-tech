@@ -191,10 +191,6 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
 :root {
  --bg: #09090d;
@@ -207,9 +203,9 @@
  --soft: #64748b;
  --text: #e5edf6;
  --heading: #f8fafc;
- --accent: #f97316;
- --accent2: #ea580c;
- --accent-soft: rgba(249,115,22,0.14);
+ --accent: #268d83;
+ --accent2: #1f756d;
+ --accent-soft: rgba(38,141,131,0.14);
  --green: #22c55e;
  --red: #f87171;
  --shadow-lg: 0 18px 50px rgba(0,0,0,0.30);
@@ -227,7 +223,7 @@ html, body {
  min-height: 100%;
  background: var(--bg);
  color: var(--text);
- font-family: 'Inter', 'Segoe UI', sans-serif;
+ font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
  scroll-behavior: smooth;
 }
 
@@ -236,14 +232,14 @@ body::before {
  position: fixed;
  inset: 0;
  background:
- radial-gradient(ellipse 75% 45% at 15% -10%, rgba(249,115,22,0.10) 0%, transparent 60%),
+ radial-gradient(ellipse 75% 45% at 15% -10%, rgba(38,141,131,0.12) 0%, transparent 60%),
  radial-gradient(ellipse 55% 35% at 85% 110%, rgba(99,102,241,0.08) 0%, transparent 60%),
  linear-gradient(180deg, rgba(255,255,255,0.015) 0%, transparent 100%);
  pointer-events: none;
  z-index: 0;
 }
 
-a { color: #fdba74; text-decoration: none; }
+a { color: #63c9be; text-decoration: none; }
 a:hover { color: #fff; }
 
 .content {
@@ -296,17 +292,16 @@ header.app-header {
  transition: all 0.18s ease;
 }
 
-.header-link.active,
 .header-link:hover,
 .header-link:focus-visible {
- background: rgba(249,115,22,0.14);
- border-color: rgba(249,115,22,0.55);
+ background: rgba(38,141,131,0.14);
+ border-color: rgba(38,141,131,0.55);
  color: #fff;
- box-shadow: 0 10px 24px rgba(249,115,22,0.12), 0 0 0 1px rgba(249,115,22,0.14);
+ box-shadow: 0 10px 24px rgba(38,141,131,0.12), 0 0 0 1px rgba(38,141,131,0.14);
 }
 
 .hero {
- padding: 22px 24px 24px;
+ padding: 18px 22px;
  margin: 0 0 1rem;
  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)), var(--panel);
  border: 1px solid var(--border);
@@ -316,27 +311,12 @@ header.app-header {
  -webkit-backdrop-filter: blur(14px);
 }
 
-.kicker {
- display: inline-flex;
- align-items: center;
- gap: 8px;
- border: 1px solid rgba(249,115,22,0.28);
- background: rgba(249,115,22,0.08);
- color: #fdba74;
- border-radius: 999px;
- padding: 7px 12px;
- font-size: 0.78rem;
- font-weight: 850;
- letter-spacing: 0.04em;
- text-transform: uppercase;
-}
-
 h1 {
  color: var(--heading);
- font-size: clamp(1.85rem, 4.2vw, 3.85rem);
+ font-size: clamp(1.85rem, 4.2vw, 3.25rem);
  line-height: 1.02;
  letter-spacing: -0.035em;
- margin: 0 0 16px;
+ margin: 0 0 8px;
  width: 100%;
  max-width: none;
 }
@@ -350,14 +330,7 @@ h1 {
  margin: 0;
 }
 
-.hero-actions {
- display: flex;
- gap: 10px;
- flex-wrap: wrap;
- margin-top: 20px;
-}
-
-#generator { scroll-margin-top: 120px; }
+#generator { scroll-margin-top: 24px; }
 
 .grid-main {
  display: grid;
@@ -369,11 +342,6 @@ h1 {
 .generator-column {
  display: grid;
  gap: 0.75rem;
-}
-
-.preview-sticky {
- grid-column: 2;
- grid-row: 1;
 }
 
 .panel {
@@ -517,9 +485,9 @@ input:hover,
 input:focus,
 textarea:hover,
 textarea:focus {
- border-color: rgba(249,115,22,0.45);
+ border-color: rgba(38,141,131,0.45);
  background: rgba(255,255,255,0.05);
- box-shadow: 0 0 0 4px rgba(249,115,22,0.08);
+ box-shadow: 0 0 0 4px rgba(38,141,131,0.08);
 }
 
 input[type="color"] {
@@ -572,7 +540,7 @@ input[type="range"] {
  text-align: right;
  font-size: 0.78rem;
  font-weight: 800;
- color: #ff9a57;
+ color: #63c9be;
  font-variant-numeric: tabular-nums;
 }
 
@@ -619,7 +587,7 @@ input[type="range"] {
  border-radius: 12px;
  padding: 11px 16px;
  font-size: 0.88rem;
- box-shadow: 0 8px 22px rgba(249,115,22,0.24);
+ box-shadow: 0 8px 22px rgba(38,141,131,0.24);
 }
 
 .btn-secondary {
@@ -676,12 +644,14 @@ input[type="range"] {
  color: #bbf7d0;
 }
 .status-message[data-type="warning"] {
- border-color: rgba(249,115,22,0.38);
- background: rgba(249,115,22,0.10);
- color: #fed7aa;
+ border-color: rgba(38,141,131,0.38);
+ background: rgba(38,141,131,0.10);
+ color: #a7f3e9;
 }
 
 .preview-sticky {
+ grid-column: 2;
+ grid-row: 1;
  position: relative;
  top: auto;
 }
@@ -736,7 +706,7 @@ input[type="range"] {
 
 .info-list span:nth-child(odd) { color: #94a3b8; }
 .info-list span:nth-child(even) {
- color: #fdba74;
+ color: #63c9be;
  font-weight: 800;
  text-align: right;
 }
@@ -761,8 +731,8 @@ input[type="range"] {
 }
 
 .tab-btn.active {
- background: linear-gradient(135deg, rgba(249,115,22,0.18), rgba(234,88,12,0.16));
- border-color: rgba(249,115,22,0.50);
+ background: linear-gradient(135deg, rgba(38,141,131,0.18), rgba(31,117,109,0.16));
+ border-color: rgba(38,141,131,0.50);
  color: #fff;
 }
 
@@ -794,29 +764,6 @@ input[type="range"] {
  padding: 3px;
 }
 
-.badge-grid {
- display: grid;
- grid-template-columns: repeat(4, minmax(0, 1fr));
- gap: 10px;
- margin-top: 18px;
-}
-
-.badge {
- padding: 12px;
- border: 1px solid rgba(255,255,255,0.07);
- border-radius: 14px;
- background: rgba(255,255,255,0.028);
- color: #cbd5e1;
- font-size: 0.82rem;
- line-height: 1.45;
-}
-
-.badge strong {
- display: block;
- color: #fdba74;
- margin-bottom: 4px;
-}
-
 .help-grid {
  display: grid;
  grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -833,7 +780,7 @@ input[type="range"] {
 
 .help-card h3 {
  margin: 0 0 8px;
- color: #fdba74;
+ color: #63c9be;
  font-size: 1rem;
 }
 
@@ -857,7 +804,7 @@ input[type="range"] {
 }
 
 .seo-section h3 {
- color: #fdba74;
+ color: #63c9be;
  font-size: 1rem;
  margin-top: 20px;
 }
@@ -928,9 +875,6 @@ input[type="range"] {
 @media (max-width: 760px) {
  .content { padding: 14px 10px 22px; }
  header.app-header {
- position: relative;
- top: auto;
- padding: 0;
   margin-bottom: 14px;
  }
  .header-actions {
@@ -938,7 +882,7 @@ input[type="range"] {
  margin-left: auto;
  justify-content: flex-end;
  }
- .hero { padding-top: 14px; }
+ .hero { padding: 14px 16px; border-radius: var(--radius-lg); }
  h1 { font-size: clamp(1.72rem, 8vw, 2.35rem); line-height: 1.08; }
  .hero-text { font-size: 0.96rem; line-height: 1.55; }
  .panel-inner { padding: 14px; }
@@ -946,7 +890,6 @@ input[type="range"] {
  .seo-columns { grid-template-columns: 1fr; }
  .tool-tabs { grid-template-columns: repeat(2, 1fr); }
  .help-grid { grid-template-columns: 1fr; }
- .badge-grid { display: none; }
  .qr-preview-shell { min-height: 300px; padding: 12px; }
  #qrCanvas { max-width: min(100%, 300px); }
 }
@@ -964,41 +907,21 @@ input[type="range"] {
 }
 
 
-/* Beginner UX improvements */
-.quick-steps {
- display: grid;
- grid-template-columns: repeat(3, minmax(0, 1fr));
- gap: 10px;
- margin-top: 16px;
-}
-.quick-step {
- background: rgba(255,255,255,0.035);
- border: 1px solid rgba(255,255,255,0.07);
- border-radius: 14px;
- padding: 12px 13px;
- color: #cbd5e1;
- font-size: 0.82rem;
- line-height: 1.45;
-}
-.quick-step strong {
- display: block;
- color: #fdba74;
- margin-bottom: 3px;
-}
+/* Beginner-friendly notes and expandable advanced settings. */
 .beginner-note,
 .simple-tip {
  margin-top: 12px;
  padding: 12px 14px;
  border-radius: 14px;
- background: rgba(249,115,22,0.08);
- border: 1px solid rgba(249,115,22,0.22);
+ background: rgba(38,141,131,0.08);
+ border: 1px solid rgba(38,141,131,0.22);
  color: #dbe7f3;
  font-size: 0.84rem;
  line-height: 1.55;
 }
 .simple-tip strong,
 .beginner-note strong {
- color: #fdba74;
+ color: #63c9be;
 }
 .technical-details,
 .advanced-settings {
@@ -1012,7 +935,7 @@ input[type="range"] {
 .advanced-settings > summary {
  cursor: pointer;
  padding: 12px 14px;
- color: #fdba74;
+ color: #63c9be;
  font-weight: 800;
  font-size: 0.86rem;
  list-style: none;
@@ -1025,7 +948,7 @@ input[type="range"] {
 .advanced-settings > summary::after {
  content: "⌄";
  float: right;
- color: #ff9a57;
+ color: #63c9be;
 }
 .technical-details[open] > summary::after,
 .advanced-settings[open] > summary::after {
@@ -1035,11 +958,6 @@ input[type="range"] {
 .advanced-settings-inner {
  padding: 0 14px 14px;
 }
-@media (max-width: 760px) {
- .quick-steps {
- grid-template-columns: 1fr;
- }
-}
 
 
 /* Shared Dark / Light mode switcher for QR-Generator.tech. */
@@ -1048,13 +966,14 @@ input[type="range"] {
  align-items: center;
  justify-content: center;
  min-height: 34px;
+ width: 36px;
  background: rgba(255,255,255,0.045);
  color: #e2e8f0;
  border: 1px solid rgba(255,255,255,0.10);
  border-radius: 10px;
- padding: 7px 11px;
+ padding: 0;
  font-family: inherit;
- font-size: 0.82rem;
+ font-size: 1.05rem;
  font-weight: 800;
  line-height: 1;
  cursor: pointer;
@@ -1063,11 +982,17 @@ input[type="range"] {
 
 .theme-toggle-btn:hover,
 .theme-toggle-btn:focus-visible {
- background: rgba(249,115,22,0.14);
- border-color: rgba(249,115,22,0.55);
+ background: rgba(38,141,131,0.14);
+ border-color: rgba(38,141,131,0.55);
  color: #ffffff;
- box-shadow: 0 10px 24px rgba(249,115,22,0.12), 0 0 0 1px rgba(249,115,22,0.14);
+ box-shadow: 0 10px 24px rgba(38,141,131,0.12), 0 0 0 1px rgba(38,141,131,0.14);
  outline: none;
+}
+
+.theme-toggle-icon {
+ display: block;
+ line-height: 1;
+ transform: translateY(-1px);
 }
 
 body[data-theme="light"] {
@@ -1081,9 +1006,9 @@ body[data-theme="light"] {
  --soft: #748398;
  --text: #243041;
  --heading: #0f172a;
- --accent: #0f766e;
- --accent2: #0d9488;
- --accent-soft: rgba(15, 118, 110, 0.13);
+ --accent: #268d83;
+ --accent2: #1f756d;
+ --accent-soft: rgba(38,141,131,0.13);
  --shadow-lg: 0 18px 50px rgba(15, 23, 42, 0.12);
  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
  background: var(--bg);
@@ -1092,15 +1017,9 @@ body[data-theme="light"] {
 
 body[data-theme="light"]::before {
  background:
- radial-gradient(ellipse 75% 45% at 15% -10%, rgba(15,118,110,0.12) 0%, transparent 60%),
+ radial-gradient(ellipse 75% 45% at 15% -10%, rgba(38,141,131,0.12) 0%, transparent 60%),
  radial-gradient(ellipse 55% 35% at 85% 110%, rgba(14,165,233,0.08) 0%, transparent 60%),
  linear-gradient(180deg, rgba(255,255,255,0.55) 0%, transparent 100%);
-}
-
-body[data-theme="light"] header.app-header {
- background: transparent;
- border: 0;
- box-shadow: none;
 }
 
 body[data-theme="light"] .hero {
@@ -1112,8 +1031,6 @@ body[data-theme="light"] .hero {
 body[data-theme="light"] .panel,
 body[data-theme="light"] .info-card,
 body[data-theme="light"] .help-card,
-body[data-theme="light"] .badge,
-body[data-theme="light"] .quick-step,
 body[data-theme="light"] .technical-details,
 body[data-theme="light"] .advanced-settings,
 body[data-theme="light"] .check-row,
@@ -1155,13 +1072,10 @@ body[data-theme="light"] .info-list span:nth-child(odd) {
 }
 
 body[data-theme="light"] a,
-body[data-theme="light"] .kicker,
 body[data-theme="light"] .slider-val,
 body[data-theme="light"] .info-list span:nth-child(even),
-body[data-theme="light"] .badge strong,
 body[data-theme="light"] .help-card h3,
 body[data-theme="light"] .seo-section h3,
-body[data-theme="light"] .quick-step strong,
 body[data-theme="light"] .technical-details > summary,
 body[data-theme="light"] .advanced-settings > summary,
 body[data-theme="light"] .simple-tip strong,
@@ -1174,11 +1088,10 @@ body[data-theme="light"] a:hover {
  color: #0f172a;
 }
 
-body[data-theme="light"] .kicker,
 body[data-theme="light"] .beginner-note,
 body[data-theme="light"] .simple-tip {
- background: rgba(15,118,110,0.08);
- border-color: rgba(15,118,110,0.22);
+ background: rgba(38,141,131,0.08);
+ border-color: rgba(38,141,131,0.22);
  color: var(--accent);
 }
 
@@ -1204,9 +1117,9 @@ body[data-theme="light"] input:hover,
 body[data-theme="light"] input:focus,
 body[data-theme="light"] textarea:hover,
 body[data-theme="light"] textarea:focus {
- border-color: rgba(15,118,110,0.45);
+ border-color: rgba(38,141,131,0.45);
  background: #ffffff;
- box-shadow: 0 0 0 4px rgba(15,118,110,0.09);
+ box-shadow: 0 0 0 4px rgba(38,141,131,0.09);
 }
 
 body[data-theme="light"] input[type="range"],
@@ -1217,8 +1130,8 @@ body[data-theme="light"] .check-row input {
 body[data-theme="light"] .btn-primary {
  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
  color: #ffffff;
- border-color: rgba(15,118,110,0.45);
- box-shadow: 0 8px 22px rgba(15,118,110,0.18);
+ border-color: rgba(38,141,131,0.45);
+ box-shadow: 0 8px 22px rgba(38,141,131,0.18);
 }
 
 body[data-theme="light"] .btn-secondary,
@@ -1238,18 +1151,17 @@ body[data-theme="light"] .theme-toggle-btn:hover,
 body[data-theme="light"] .theme-toggle-btn:focus-visible,
 body[data-theme="light"] .tab-btn:hover,
 body[data-theme="light"] .tab-btn:focus-visible {
- background: rgba(15,118,110,0.08);
- border-color: rgba(15,118,110,0.35);
+ background: rgba(38,141,131,0.08);
+ border-color: rgba(38,141,131,0.35);
  color: #0f172a;
- box-shadow: 0 10px 24px rgba(15,118,110,0.10), 0 0 0 1px rgba(15,118,110,0.12);
+ box-shadow: 0 10px 24px rgba(38,141,131,0.10), 0 0 0 1px rgba(38,141,131,0.12);
 }
 
-body[data-theme="light"] .header-link.active,
 body[data-theme="light"] .tab-btn.active {
- background: linear-gradient(180deg, rgba(15,118,110,0.12), rgba(15,118,110,0.06));
- border-color: rgba(15,118,110,0.45);
+ background: linear-gradient(180deg, rgba(38,141,131,0.12), rgba(38,141,131,0.06));
+ border-color: rgba(38,141,131,0.45);
  color: var(--accent);
- box-shadow: 0 0 0 1px rgba(15,118,110,0.12);
+ box-shadow: 0 0 0 1px rgba(38,141,131,0.12);
 }
 
 body[data-theme="light"] .qr-preview-shell {
@@ -1274,58 +1186,9 @@ body[data-theme="light"] .status-message[data-type="success"] {
 }
 
 body[data-theme="light"] .status-message[data-type="warning"] {
- border-color: rgba(15,118,110,0.28);
- background: rgba(15,118,110,0.08);
- color: #0f766e;
-}
-
-@media (max-width: 760px) {
- .theme-toggle-btn {
-  min-height: 34px;
- }
-}
-
-
-
-/* Final requested visual fixes: compact navigation, rounded hero background and removed CTA area. */
-header.app-header {
- position: relative !important;
- top: auto !important;
- margin-bottom: 1rem !important;
- overflow: visible !important;
-}
-
-.hero {
- padding: 22px 24px 24px !important;
- margin: 0 0 1rem !important;
- background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)), var(--panel) !important;
- border: 1px solid var(--border) !important;
- border-radius: var(--radius-xl) !important;
- box-shadow: var(--shadow-md) !important;
- backdrop-filter: blur(14px);
- -webkit-backdrop-filter: blur(14px);
-}
-
-body[data-theme="light"] .hero {
- background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.82)) !important;
- border-color: rgba(15,23,42,0.10) !important;
- box-shadow: 0 10px 30px rgba(15,23,42,0.08) !important;
-}
-
-.hero-actions {
- display: none !important;
-}
-
-.preview-sticky {
- position: relative !important;
- top: auto !important;
-}
-
-@media (max-width: 760px) {
- .hero {
-  padding: 18px 16px 18px !important;
-  border-radius: var(--radius-lg) !important;
- }
+ border-color: rgba(38,141,131,0.28);
+ background: rgba(38,141,131,0.08);
+ color: #1f756d;
 }
 
 </style>
@@ -2667,34 +2530,21 @@ module.exports = QRCode;
 </script>
 <div class="content">
  <header class="app-header">
- <div class="header-actions" aria-label="Main navigation">
- <a class="header-link active" href="https://qr-generator.tech/" aria-current="page">QR Generator</a>
+ <nav class="header-actions" aria-label="Main navigation">
  <a class="header-link" href="#generator">Create QR Code</a>
  <a class="header-link" href="#faq">FAQ</a>
- <button class="theme-toggle-btn" id="themeToggleBtn" type="button" aria-label="Switch to dark mode" aria-pressed="true">
- <span id="themeToggleLabel">Dark mode</span>
+ <button class="theme-toggle-btn" id="themeToggleBtn" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+ <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">☾</span>
  </button>
- </div>
+ </nav>
  </header>
 
  <main>
  <section class="hero">
  <h1>Free QR Code Generator</h1>
  <p class="hero-text">
- Create free QR codes online directly in your browser for URLs, WiFi, vCards, email, SMS, events, maps, WhatsApp and payments.
- The codes are static and private by design. Customize colors, logo and frame, then download PNG or SVG without signup.
+ Create private static QR codes for links, WiFi, contacts, messages and payments, customize their design and download PNG or SVG without signup.
  </p>
- <div class="quick-steps" aria-label="Quick steps">
- <div class="quick-step"><strong>1. Enter content</strong> Choose what the QR code should open and fill in the fields.</div>
- <div class="quick-step"><strong>2. Customize</strong> Choose a reliable style, colors, logo or frame when needed.</div>
- <div class="quick-step"><strong>3. Preview & download</strong> Check the QR code and save PNG or SVG.</div>
- </div>
- <div class="badge-grid" aria-label="Key features">
- <div class="badge"><strong>No signup</strong> Generate and download without creating an account.</div>
- <div class="badge"><strong>Private by design</strong> QR data is processed in the browser, not saved in a database.</div>
- <div class="badge"><strong>Print QR-ready</strong> Export high-resolution PNG files for printing.</div>
- <div class="badge"><strong>Useful tools</strong> Print QR size calculator, logo checks and scan warnings.</div>
- </div>
  </section>
 
  <section id="generator" class="grid-main" aria-label="QR code generator">
@@ -2838,7 +2688,7 @@ module.exports = QRCode;
  </div>
  <div class="field">
  <label for="gradientColor">Second gradient color</label>
- <input id="gradientColor" type="color" value="#f97316">
+ <input id="gradientColor" type="color" value="#268d83">
  </div>
  <div class="field full">
  <button class="btn btn-secondary" id="resetColorsBtn" type="button">Reset to safest colors</button>
@@ -3147,7 +2997,7 @@ module.exports = QRCode;
 
  var THEME_STORAGE_KEY = 'qrGeneratorTechTheme';
  var themeToggleBtn = el('themeToggleBtn');
- var themeToggleLabel = el('themeToggleLabel');
+ var themeToggleIcon = el('themeToggleIcon');
  var themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
  function getStoredTheme() {
@@ -3168,12 +3018,13 @@ module.exports = QRCode;
   themeColorMeta.setAttribute('content', selectedTheme === 'light' ? '#f5f7fa' : '#09090d');
  }
 
- if (themeToggleBtn && themeToggleLabel) {
-  var nextLabel = selectedTheme === 'light' ? 'Dark mode' : 'Light mode';
+ if (themeToggleBtn) {
+  var darkModeActive = selectedTheme === 'dark';
   var ariaLabel = selectedTheme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
-  themeToggleLabel.textContent = nextLabel;
   themeToggleBtn.setAttribute('aria-label', ariaLabel);
-  themeToggleBtn.setAttribute('aria-pressed', selectedTheme === 'light' ? 'true' : 'false');
+  themeToggleBtn.setAttribute('aria-pressed', darkModeActive ? 'true' : 'false');
+  themeToggleBtn.setAttribute('title', ariaLabel);
+  if (themeToggleIcon) themeToggleIcon.textContent = darkModeActive ? '☀' : '☾';
  }
 
  if (options.save !== false) {
@@ -4282,7 +4133,7 @@ canvas.width = 1024;
  gapped: {dotStyle: 'gappedSquare', finderStyle: 'classic', moduleSpacing: '14', errorCorrection: 'H'},
  pill: {dotStyle: 'horizontal', finderStyle: 'rounded', moduleSpacing: '8', errorCorrection: 'H'},
  diamond: {dotStyle: 'diamond', finderStyle: 'classic', moduleSpacing: '10', errorCorrection: 'H'},
- gradientBrand: {dotStyle: 'extraRounded', finderStyle: 'rounded', moduleSpacing: '5', errorCorrection: 'H', gradientMode: 'linear', foregroundColor: '#111827', gradientColor: '#f97316', backgroundColor: '#ffffff'}
+ gradientBrand: {dotStyle: 'extraRounded', finderStyle: 'rounded', moduleSpacing: '5', errorCorrection: 'H', gradientMode: 'linear', foregroundColor: '#111827', gradientColor: '#268d83', backgroundColor: '#ffffff'}
  }[preset];
  if (!settings) {
  applyingDesignPreset = false;
@@ -4303,7 +4154,7 @@ canvas.width = 1024;
  if (el('foregroundColor')) el('foregroundColor').value = '#111827';
  if (el('backgroundColor')) el('backgroundColor').value = '#ffffff';
  if (el('gradientMode')) el('gradientMode').value = 'none';
- if (el('gradientColor')) el('gradientColor').value = '#f97316';
+ if (el('gradientColor')) el('gradientColor').value = '#268d83';
  if (el('transparentBg')) el('transparentBg').checked = false;
  update();
  }
