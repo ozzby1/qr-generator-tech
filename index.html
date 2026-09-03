@@ -8,7 +8,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="QR Generator">
 <meta name="application-name" content="QR Generator">
-<meta name="theme-color" content="#09090d">
+<meta name="theme-color" content="#f5f7fa">
 <link rel="canonical" href="https://qr-generator.tech/">
 <link rel="alternate" hreflang="en" href="https://qr-generator.tech/">
 <link rel="alternate" hreflang="x-default" href="https://qr-generator.tech/">
@@ -2664,18 +2664,33 @@ module.exports = QRCode;
 <meta name="qr-ux-version" content="QR_UX_SEO_MOBILE_ADVANCED_OPEN_2026-07-09"/>
 </head>
 
-<body>
+<body data-theme="light">
+<script>
+(function () {
+  try {
+    var savedTheme = window.localStorage.getItem('qrGeneratorTechTheme');
+    if (savedTheme === 'dark') {
+      document.body.dataset.theme = 'dark';
+      document.documentElement.dataset.theme = 'dark';
+    } else {
+      document.documentElement.dataset.theme = 'light';
+    }
+  } catch (e) {
+    document.documentElement.dataset.theme = 'light';
+  }
+})();
+</script>
 <div class="content">
  <header class="app-header">
  <a href="https://qr-generator.tech/" aria-label="QR Generator home">
- <img class="brand-logo" src="https://qr-generator.tech/qrlogo.png" alt="QR Generator">
+ <img class="brand-logo" src="https://qr-generator.tech/qrlogo1.png" alt="QR Generator">
  </a>
  <div class="header-actions" aria-label="Main navigation">
  <a class="header-link active" href="https://qr-generator.tech/" aria-current="page">QR Generator</a>
  <a class="header-link" href="#generator">Create QR Code</a>
  <a class="header-link" href="#faq">FAQ</a>
- <button class="theme-toggle-btn" id="themeToggleBtn" type="button" aria-label="Switch to light mode">
- <span id="themeToggleLabel">Light mode</span>
+ <button class="theme-toggle-btn" id="themeToggleBtn" type="button" aria-label="Switch to dark mode" aria-pressed="true">
+ <span id="themeToggleLabel">Dark mode</span>
  </button>
  </div>
  </header>
@@ -3161,7 +3176,7 @@ module.exports = QRCode;
   var storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
   if (storedTheme === 'light' || storedTheme === 'dark') return storedTheme;
  } catch (e) {}
- return 'dark';
+ return 'light';
  }
 
  function applyTheme(theme, options) {
